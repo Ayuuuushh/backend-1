@@ -47,6 +47,20 @@ router.get('/delete', async function (req, res,) {
   const deleteUser = await userModel.deleteMany({ name: 'k' })
   res.send(deleteUser)
 });
+router.get('/flash', async function (req, res,) {
+ req.flash('age',12)
+  res.send('Ban gaya')
+});
+router.get('/check', async function (req, res,) {
+ console.log(req.flash('age'))
+  res.send('check karo')
+});
+
+
+
+
+
+
 
 
 
